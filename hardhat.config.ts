@@ -2,6 +2,8 @@ import 'hardhat-typechain'
 import '@nomiclabs/hardhat-ethers'
 import '@nomiclabs/hardhat-waffle'
 import '@nomiclabs/hardhat-etherscan'
+import * as dotenv from "dotenv";
+dotenv.config();
 
 export default {
   networks: {
@@ -41,11 +43,14 @@ export default {
     polygon: {
       url: `https://polygon-mainnet.infura.io/v3/${process.env.INFURA_API_KEY}`,
     },
+    bscTestnet: {
+      url: "https://data-seed-prebsc-2-s1.binance.org:8545",
+    },
   },
   etherscan: {
     // Your API key for Etherscan
     // Obtain one at https://etherscan.io/
-    apiKey: process.env.ETHERSCAN_API_KEY,
+    apiKey: process.env.API_KEY_ETHERSCAN_BSCTESTNET,
   },
   solidity: {
     version: '0.7.6',
